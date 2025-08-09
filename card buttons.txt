@@ -52,6 +52,7 @@ local leftmost_joker = G.jokers.cards[1]
 local copied_joker = copy_card(leftmost_joker)
 copied_joker:add_to_deck()
 G.jokers:emplace(copied_joker)
+ease_dollars(-40)
 end
 
 end,
