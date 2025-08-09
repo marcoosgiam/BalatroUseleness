@@ -2,7 +2,7 @@
     "id":"BalatroUseleness",
     "name":"BalatroUseleness",
     "author":["Lact4"],
-    "description":"Add "utilities" for creating mods",
+    "description":"Add \"utilities\" for creating mods",
     "prefix":"BalatroUseleness",
     "main_file":"main.lua",
     "priority":-10,
