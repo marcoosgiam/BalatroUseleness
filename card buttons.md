@@ -1,0 +1,66 @@
+With BalatroUseleness creating custom card buttons is easy
+You just need to do:
+config = {
+custom_buttons = {
+{
+id="button_id",(used for clicked context)
+text="button_text_here",(text of the button)
+text_colour=G.C.WHITE,(colour of the text)
+colour = G.C.MULT,(background color)
+active = true,(If the button is currently active)
+}
+
+}
+
+}
+
+Button pressed context:
+{
+custom_button_pressed = true,
+card:(the card the button is parented to)
+button_id:(the id of the button)
+}
+
+example creating a joker that copies leftmost joker for 40 dollars whenever a button is pressed:
+SMODS.Joker{
+key = "joker_copy_maker",
+name = "Joker Copy Maker",
+rarity = 4,
+cost = 20,
+atlas = "Joker Copy Maker",
+blueprint_compat = true,
+config = {
+custom_buttons = {
+
+{
+id="copy_joker_button",
+text = "Copy leftmost joker",
+text_colour = G.C.MULT,
+colour = G.C.GREEN,
+}
+
+},
+
+},
+loc_txt = {
+name = "{C:green}Copy maker",
+text = {"Has a button that allows you to copy the leftmost joker for {C:green}40{C:attention}$ dollars whenever clicked"},
+},
+calculate = function(self,card,context)
+if context.custom_button_pressed and context.card == card and context.button_id == "copy_joker_button" then
+local leftmost_joker = G.jokers.cards[1]
+local copied_joker = copy_card(leftmost_joker)
+copied_joker:add_to_deck()
+G.jokers:emplace(copied_joker)
+end
+
+end,
+
+}
+
+}
+
+
+}
+
+}
