@@ -1,0 +1,12 @@
+{
+    "id":"BalatroUseleness",
+    "name":"BalatroUseleness",
+    "author":["Lact4"],
+    "description":"Add "utilities" for creating mods",
+    "prefix":"BalatroUseleness",
+    "main_file":"main.lua",
+    "priority":-10,
+    "badge_colour":"FF230A",
+    "display_name":"BalatroUseleness",
+    "version":"1.0.0"
+}
