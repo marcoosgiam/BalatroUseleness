@@ -194,9 +194,11 @@ G.FUNCS.edit = function (e)
 end
 local last = G.UIDEF.use_and_sell_buttons
 G.UIDEF.use_and_sell_buttons = function (card)
+    local optional_features = SMODS.optional_features or {}
     local result = last(card)
-    print("node:",result.nodes[1])
+    if optional_features.edit_card then
     table.insert(result.nodes[1].nodes, create_edit_card_button(card))
+    end
     return result
 end
 local function get_unique_ref_id(card)
